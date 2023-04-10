@@ -27,7 +27,7 @@ const CardsCollection = () => {
         onPress={() => setVisible(!visible)}
         style={globalStyle.rowBetweenCenter}
       >
-        <Text style={customizeText(20, "normal")}>Tech Stack</Text>
+        <Text style={customizeText(20, "normal")}>My current tech stack</Text>
         <Feather name={visible ? "chevron-up" : "chevron-down"} size={25} color={colorPalette.snow} />
       </TouchableOpacity>
       {visible ? (

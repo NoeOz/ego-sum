@@ -29,36 +29,40 @@ const Me = () => {
     <Animated.View entering={FadeIn.duration(3500).springify()}>
       <Card
         color={colorPalette.cactus_2}
-        style={{ height: generalInfo.width * 0.5 }}
+        style={{
+          ...globalStyle.rowBetweenCenter,
+          height: generalInfo.width * 0.5,
+        }}
       >
-        <View style={{ ...globalStyle.rowBetweenCenter }}>
-          <Image
-            style={[
-              {
-                height: generalInfo.width * 0.4,
-                width: generalInfo.width * 0.4,
-                borderRadius: generalInfo.width * 0.25,
-                marginRight: 10,
-              },
-            ]}
-            source={{
-              uri: alterEgoWWI,
-            }}
+        <Image
+          style={[
+            {
+              height: generalInfo.width * 0.4,
+              width: generalInfo.width * 0.4,
+              borderRadius: generalInfo.width * 0.25,
+              marginRight: 5,
+            },
+          ]}
+          source={{
+            uri: alterEgoWWI,
+          }}
+        />
+        <View
+          style={{
+            justifyContent: "space-evenly",
+            height: "100%",
+          }}
+        >
+          <TextAuto
+            textRender={"Noe Oziel"}
+            customStyle={customizeText(25, "normal")}
           />
-          <View style={{ justifyContent: "space-evenly", height: "100%" }}>
-            <TextAuto
-              textRender={"Noe Oziel"}
-              customStyle={customizeText(25, "normal")}
-            />
-            <View style={globalStyle.txtBorderSnow}>
-              <Text style={customizeText(20, "normal")}>
-                Fullstack developer
-              </Text>
-            </View>
-            <View style={globalStyle.rowBetweenCenter}>
-              <Text style={customizeText(18, "normal")}>More info here</Text>
-              <Feather name="circle" size={15} color={colorPalette.snow} />
-            </View>
+          <View style={globalStyle.txtBorderSnow}>
+            <Text style={customizeText(20, "normal")}>Fullstack developer</Text>
+          </View>
+          <View style={globalStyle.rowBetweenCenter}>
+            <Text style={customizeText(18, "normal")}>More info here</Text>
+            <Feather name="circle" size={15} color={colorPalette.snow} />
           </View>
         </View>
       </Card>

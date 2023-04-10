@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Text } from "react-native";
 import { customizeText } from "../../styles/globalStyles";
 
-const TextAuto = ({textRender, customStyle}) => {
+const TextAuto = ({textRender, customStyle, speed = 150}) => {
   const [text, setText] = useState("");
   const fullText = textRender;
   const [index, setIndex] = useState(0);
@@ -12,7 +12,7 @@ const TextAuto = ({textRender, customStyle}) => {
       setTimeout(() => {
         setText(text + fullText[index]);
         setIndex(index + 1);
-      }, 150);
+      }, speed);
     }
   }, [index]);
 
