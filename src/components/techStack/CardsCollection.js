@@ -41,17 +41,4 @@ const CardsCollection = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  cardGeneral: {
-    width: generalInfo.width * 0.92,
-    padding: "2.5%",
-    marginHorizontal: 5,
-    alignSelf: "center",
-    position: "absolute",
-    width: "100%",
-    alignSelf: "flex-start",
-    elevation: 20,
-  },
-});
-
 export default CardsCollection;

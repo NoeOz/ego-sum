@@ -5,7 +5,7 @@ import {
 } from "react-native-reanimated";
 
 export function useAnimations() {
-  const springStyles = (number) =>
+  const SpringStyles = (number) =>
     useAnimatedStyle(() => {
       return {
         transform: [
@@ -19,5 +19,5 @@ export function useAnimations() {
       };
     });
 
-  return { springStyles };
+  return { SpringStyles };
 }

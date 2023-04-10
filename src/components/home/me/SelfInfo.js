@@ -34,12 +34,7 @@ const SelfInfo = () => {
         textRender={
           "If there is something I don't know, I will learn it and apply it as soon as possible."
         }
-        customStyle={customizeText(18, "normal", null, "300")}
-        speed={50}
-      />
-      <TextAuto
-        textRender={"I'm looking always to be a better version of myself."}
-        customStyle={customizeText(18, "normal", null, "400")}
+        customStyle={{...customizeText(18, "normal", null, "300"), marginVertical: 10}}
         speed={50}
       />
     </>

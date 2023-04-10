@@ -10,7 +10,7 @@ import {
 import Animated, { FadeIn } from "react-native-reanimated";
 import TextAuto from "../../ui/TextAuto";
 const Me = () => {
-  /* const { springStyles } = useAnimations();
+  /* const { SpringStyles } = useAnimations();
   const [yTransition, setYTransition] = useState(10); */
 
   /* useEffect(() => {
@@ -32,18 +32,16 @@ const Me = () => {
         style={{
           ...globalStyle.rowBetweenCenter,
           height: generalInfo.width * 0.5,
-          paddingHorizontal: "2.5%",
+          paddingHorizontal: "5%",
         }}
       >
         <Image
-          style={[
-            {
-              height: generalInfo.width * 0.4,
-              width: generalInfo.width * 0.4,
-              borderRadius: generalInfo.width * 0.25,
-              marginRight: 5,
-            },
-          ]}
+          style={{
+            height: generalInfo.width * 0.4,
+            width: generalInfo.width * 0.4,
+            borderRadius: generalInfo.width * 0.25,
+            marginRight: 10,
+          }}
           source={{
             uri: alterEgoWWI,
           }}
@@ -52,6 +50,7 @@ const Me = () => {
           style={{
             justifyContent: "space-evenly",
             flex: 1,
+            height: "100%",
           }}
         >
           <TextAuto
