@@ -32,6 +32,7 @@ const Me = () => {
         style={{
           ...globalStyle.rowBetweenCenter,
           height: generalInfo.width * 0.5,
+          paddingHorizontal: "2.5%",
         }}
       >
         <Image
@@ -50,7 +51,7 @@ const Me = () => {
         <View
           style={{
             justifyContent: "space-evenly",
-            height: "100%",
+            flex: 1,
           }}
         >
           <TextAuto
