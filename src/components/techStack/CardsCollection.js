@@ -1,79 +1,43 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import CloudStack from "./CloudStack";
 import MobileStack from "./MobileStack";
 import WebStack from "./WebStack";
-import { generalInfo } from "../../styles/globalStyles";
-import { useEffect, useState } from "react";
-
-const initialPositionCards = {
-  first: { zIndex: 5, top: "17%", width: "92%" },
-  second: { zIndex: 3, top: "9%", width: "95%", left: "3%" },
-  third: { zIndex: 1, top: 0, width: "98%", left: "6%" },
-};
+import {
+  colorPalette,
+  customizeText,
+  generalInfo,
+  globalStyle,
+} from "../../styles/globalStyles";
+import Card from "../ui/Card";
+import { useState } from "react";
+import { Feather } from "@expo/vector-icons";
 
 const CardsCollection = () => {
-  const [positionCards, setPositionCards] = useState(initialPositionCards);
-  const [move, setMove] = useState(0);
-
-  useEffect(() => {
-    itercalateCards();
-    return () => {
-      setPositionCards(initialPositionCards);
-    };
-  }, []);
-
-  useEffect(() => {
-    itercalateCards();
-  }, [move]);
-
-  function itercalateCards() {
-    if (move === 0)
-      setTimeout(() => {
-        setPositionCards({
-          ...positionCards,
-          first: positionCards.second,
-          second: positionCards.first,
-        });
-        setMove(1);
-      }, 3500);
-    else if (move === 1)
-      setTimeout(() => {
-        setPositionCards({
-          ...positionCards,
-          first: positionCards.third,
-          second: initialPositionCards.second,
-          third: initialPositionCards.first,
-        });
-        setMove(2);
-      }, 3500);
-    else
-      setTimeout(() => {
-        setPositionCards(initialPositionCards);
-        setMove(0);
-      }, 3500);
-  }
-
+  const [visible, setVisible] = useState(false);
   return (
-    <View
+    <Card
+      color={colorPalette.grape}
       style={{
-        height: generalInfo.height * 0.3,
-        width: generalInfo.width * 0.9,
+        width: "100%",
         marginVertical: 15,
+        alignSelf: "center",
       }}
     >
-      <MobileStack
-        fixStyle={styles.cardGeneral}
-        position={positionCards["first"]}
-      />
-      <WebStack
-        fixStyle={styles.cardGeneral}
-        position={positionCards["second"]}
-      />
-      <CloudStack
-        fixStyle={styles.cardGeneral}
-        position={positionCards["third"]}
-      />
-    </View>
+      <TouchableOpacity
+        onPress={() => setVisible(!visible)}
+        style={globalStyle.rowBetweenCenter}
+      >
+        <Text style={customizeText(20, "normal")}>Tech Stack</Text>
+        <Feather name={visible ? "chevron-up" : "chevron-down"} size={25} color={colorPalette.snow} />
+      </TouchableOpacity>
+      {visible ? (
+        <>
+          <MobileStack />
+          <WebStack />
+          <CloudStack />
+        </>
+      ) : null}
+    </Card>
   );
 };
 

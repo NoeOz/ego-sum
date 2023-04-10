@@ -1,4 +1,4 @@
-import { StyleSheet, Text, StatusBar, View } from "react-native";
+import { StyleSheet, Text, StatusBar, View, ScrollView } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import Card from "../components/ui/Card";
 import {
@@ -8,20 +8,18 @@ import {
 } from "../styles/globalStyles";
 import CardsCollection from "../components/techStack/CardsCollection";
 import Me from "../components/home/me/Me";
+import SelfInfo from "../components/home/me/SelfInfo";
+import Professional from "../components/home/professional/Professional";
 
 export default function Home() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Me />
-      <View style={globalStyle.snowLine} />
+      <SelfInfo />
       <CardsCollection />
       <View style={globalStyle.snowLine} />
-      <Card color={colorPalette.black}>
-        <View style={{ ...globalStyle.txtBorderSnow, alignSelf: "flex-start" }}>
-          <Text style={customizeText(20, "normal")}>Work experience</Text>
-        </View>
-      </Card>
-    </View>
+      <Professional />
+    </ScrollView>
   );
 }
 
@@ -30,6 +28,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colorPalette.background,
     paddingHorizontal: "2.5%",
-    paddingTop: StatusBar.currentHeight,
+    marginTop: StatusBar.currentHeight,
   },
 });

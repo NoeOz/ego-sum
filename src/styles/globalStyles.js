@@ -13,6 +13,7 @@ export const colorPalette = {
   lavander: "#A292B0",
   gray_1: "#555555",
   gray_2: "#909090",
+  cool_gray: "#4B576E",
 
   error: "#C54444",
   background: "#121212",
@@ -81,6 +82,11 @@ export const globalStyle = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  rowWrapBetween: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
   },
   txtBorderSnow: {
     borderWidth: 1,

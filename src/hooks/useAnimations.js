@@ -11,8 +11,8 @@ export function useAnimations() {
         transform: [
           {
             translateY: withSpring(number, {
-              damping: 50,
-              stiffness: 10,
+              damping: 100,
+              stiffness: 60,
             }),
           },
         ],

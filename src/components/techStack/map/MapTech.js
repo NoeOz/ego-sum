@@ -1,17 +1,16 @@
 import { View } from "react-native";
-import { globalStyle } from "../../../styles/globalStyles";
 import IconRender from "../../ui/IconRender";
+import { globalStyle } from "../../../styles/globalStyles";
 
 const MapTech = ({ stackTech }) => (
-  <View
-    style={{
-      flexDirection: "row",
-      flexWrap: "wrap",
-      justifyContent: "space-between",
-    }}
-  >
-    {stackTech.map((tech) => (
-      <IconRender key={tech.name} nameIcon={tech.name} type={tech.type} />
+  <View style={globalStyle.rowWrapBetween}>
+    {stackTech.map((tech, index) => (
+      <IconRender
+        key={tech.name}
+        nameIcon={tech.name}
+        type={tech.type}
+        delay={index * 100 + 100}
+      />
     ))}
   </View>
 );

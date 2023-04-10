@@ -1,21 +1,26 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import {
-  colorPalette,
-  customizeText,
-  globalStyle,
-} from "../../styles/globalStyles";
+import Animated, { FadeIn } from "react-native-reanimated";
+import { colorPalette, customizeText } from "../../styles/globalStyles";
+import { useEffect, useState } from "react";
+import { useAnimations } from "../../hooks/useAnimations";
 
-const IconRender = ({ nameIcon, type }) => {
+const IconRender = ({ nameIcon, type, delay }) => {
   return type === "image" ? (
-    <View style={styles.iconContainer}>
-      <Image style={{ height: 35, width: 35 }} source={nameIcon} />
-    </View>
+    <Animated.View
+      entering={FadeIn.delay(delay).springify()}
+      style={styles.iconContainer}
+    >
+      <Image style={{ height: 30, width: 30 }} source={nameIcon} />
+    </Animated.View>
   ) : (
-    <View style={styles.iconContainer}>
+    <Animated.View
+      entering={FadeIn.delay(delay).springify()}
+      style={styles.iconContainer}
+    >
       <Text style={customizeText(18, "dark", "center", "bold")}>
         {nameIcon}
       </Text>
-    </View>
+    </Animated.View>
   );
 };
 
@@ -23,10 +28,10 @@ const styles = StyleSheet.create({
   iconContainer: {
     backgroundColor: colorPalette.snow,
     padding: 8,
-    borderRadius: 10,
+    borderRadius: 50,
     height: 50,
     justifyContent: "center",
-    margin: 5
+    margin: 3,
   },
 });
 
