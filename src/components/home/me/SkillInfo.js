@@ -1,6 +1,11 @@
 import { Text, View } from "react-native";
-import { customizeText, globalStyle } from "../../../styles/globalStyles";
+import {
+  colorPalette,
+  customizeText,
+  globalStyle,
+} from "../../../styles/globalStyles";
 import TextAuto from "../../ui/TextAuto";
+import Card from "../../ui/Card";
 
 const skillsInitial = [
   "Creative",
@@ -14,32 +19,20 @@ const skillsInitial = [
 const SkillInfo = () => {
   const skills = skillsInitial;
   return (
-    <>
-      <View style={globalStyle.rowWrapBetween}>
-        {skills.map((skill) => (
-          <View key={skill} style={{ ...globalStyle.txtBorderSnow, margin: 5 }}>
-            <Text
-              style={{
-                ...customizeText(18, "normal", "center", "300"),
-                textTransform: "capitalize",
-              }}
-            >
-              {skill}
-            </Text>
-          </View>
-        ))}
-      </View>
-      <TextAuto
-        textRender={
-          "If there is something I don't know, I will learn it and apply it as soon as possible."
-        }
-        customStyle={{
-          ...customizeText(18, "normal", null, "300"),
-          marginVertical: 10,
-        }}
-        speed={50}
-      />
-    </>
+    <Card color={colorPalette.cactus_2} style={globalStyle.rowWrapBetween}>
+      {skills.map((skill) => (
+        <View key={skill} style={{ ...globalStyle.txtBorderSnow, margin: 5 }}>
+          <Text
+            style={{
+              ...customizeText(18, "normal", "center", "300"),
+              textTransform: "capitalize",
+            }}
+          >
+            {skill}
+          </Text>
+        </View>
+      ))}
+    </Card>
   );
 };
 

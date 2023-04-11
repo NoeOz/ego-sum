@@ -1,9 +1,15 @@
 import { StyleSheet, StatusBar, View, ScrollView } from "react-native";
-import { colorPalette, generalInfo, globalStyle } from "../styles/globalStyles";
+import {
+  colorPalette,
+  customizeText,
+  generalInfo,
+  globalStyle,
+} from "../styles/globalStyles";
 import Me from "../components/home/me/Me";
 import SkillInfo from "../components/home/me/SkillInfo";
 import Professional from "../components/home/professional/Professional";
 import StackCollection from "../components/home/techStack/StackCollection";
+import Timer from "../components/ui/Timer";
 
 export default function Home() {
   return (
