@@ -18,7 +18,7 @@ export const TraslucentModal = (props) => {
       onRequestClose={() => setVisible(!visible)}
     >
       <View
-        style={{ flex: 1, padding: "2.5%", backgroundColor: "rgba(0,0,0,.9)" }}
+        style={{ flex: 1, padding: "2.5%", backgroundColor: "rgba(20,20,20,.9)" }}
       >
         {children}
       </View>

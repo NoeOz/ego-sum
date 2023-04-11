@@ -2,17 +2,12 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import CloudStack from "./CloudStack";
 import MobileStack from "./MobileStack";
 import WebStack from "./WebStack";
-import {
-  colorPalette,
-  customizeText,
-  generalInfo,
-  globalStyle,
-} from "../../styles/globalStyles";
-import Card from "../ui/Card";
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
+import { colorPalette, customizeText, globalStyle } from "../../../styles/globalStyles";
+import Card from "../../ui/Card";
 
-const CardsCollection = () => {
+const StackCollection = () => {
   const [visible, setVisible] = useState(false);
   return (
     <Card
@@ -41,4 +36,4 @@ const CardsCollection = () => {
   );
 };
 
-export default CardsCollection;
+export default StackCollection;

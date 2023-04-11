@@ -1,22 +1,16 @@
-import { StyleSheet, Text, StatusBar, View, ScrollView } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import Card from "../components/ui/Card";
-import {
-  colorPalette,
-  customizeText,
-  globalStyle,
-} from "../styles/globalStyles";
-import CardsCollection from "../components/techStack/CardsCollection";
+import { StyleSheet, StatusBar, View, ScrollView } from "react-native";
+import { colorPalette, generalInfo, globalStyle } from "../styles/globalStyles";
 import Me from "../components/home/me/Me";
-import SelfInfo from "../components/home/me/SelfInfo";
+import SkillInfo from "../components/home/me/SkillInfo";
 import Professional from "../components/home/professional/Professional";
+import StackCollection from "../components/home/techStack/StackCollection";
 
 export default function Home() {
   return (
     <ScrollView style={styles.container}>
       <Me />
-      <SelfInfo />
-      <CardsCollection />
+      <SkillInfo />
+      <StackCollection />
       <View style={globalStyle.snowLine} />
       <Professional />
     </ScrollView>
@@ -28,6 +22,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colorPalette.background,
     paddingHorizontal: "2.5%",
-    marginTop: StatusBar.currentHeight,
+    marginTop: generalInfo.os === "android" ? StatusBar.currentHeight : 20,
   },
 });

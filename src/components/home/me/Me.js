@@ -1,4 +1,4 @@
-import { Image, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import Card from "../../ui/Card";
 import { Feather } from "@expo/vector-icons";
 import {
@@ -35,24 +35,8 @@ const Me = () => {
           paddingHorizontal: "5%",
         }}
       >
-        <Image
-          style={{
-            height: generalInfo.width * 0.4,
-            width: generalInfo.width * 0.4,
-            borderRadius: generalInfo.width * 0.25,
-            marginRight: 10,
-          }}
-          source={{
-            uri: alterEgoWWI,
-          }}
-        />
-        <View
-          style={{
-            justifyContent: "space-evenly",
-            flex: 1,
-            height: "100%",
-          }}
-        >
+        <Image style={styles.imageStyle} source={{ uri: alterEgoMiddleAge }} />
+        <View style={styles.infoContainer}>
           <TextAuto
             textRender={"Noe Oziel"}
             customStyle={customizeText(25, "normal")}
@@ -69,5 +53,19 @@ const Me = () => {
     </Animated.View>
   );
 };
+
+const styles = StyleSheet.create({
+  imageStyle: {
+    height: generalInfo.width * 0.4,
+    width: generalInfo.width * 0.4,
+    borderRadius: generalInfo.width * 0.25,
+    marginRight: 10,
+  },
+  infoContainer: {
+    justifyContent: "space-evenly",
+    flex: 1,
+    height: "100%",
+  },
+});
 
 export default Me;

@@ -12,7 +12,7 @@ const skillsInitial = [
   "Proactive",
 ];
 
-const SelfInfo = () => {
+const SkillInfo = () => {
   const skills = skillsInitial;
   return (
     <>
@@ -41,4 +41,4 @@ const SelfInfo = () => {
   );
 };
 
-export default SelfInfo;
+export default SkillInfo;

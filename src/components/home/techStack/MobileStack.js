@@ -1,16 +1,16 @@
 import { Text, View } from "react-native";
-import { customizeText } from "../../styles/globalStyles";
 import Animated, { FadeIn } from "react-native-reanimated";
 import MapTech from "./map/MapTech";
+import { customizeText } from "../../../styles/globalStyles";
 
 const MobileStack = () => {
   const mobileTech = [
-    { name: require("../../assets/icons/react.png"), type: "image" },
-    { name: require("../../assets/icons/expo.png"), type: "image" },
+    { name: require("../../../assets/icons/react.png"), type: "image" },
+    { name: require("../../../assets/icons/expo.png"), type: "image" },
     { name: "Animations", type: "text" },
-    { name: require("../../assets/icons/javascript.png"), type: "image" },
-    { name: require("../../assets/icons/redux.png"), type: "image" },
-    { name: require("../../assets/icons/jest.png"), type: "image" },
+    { name: require("../../../assets/icons/javascript.png"), type: "image" },
+    { name: require("../../../assets/icons/redux.png"), type: "image" },
+    { name: require("../../../assets/icons/jest.png"), type: "image" },
   ];
 
   return (

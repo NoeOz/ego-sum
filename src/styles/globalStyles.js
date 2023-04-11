@@ -62,7 +62,6 @@ export const globalStyle = StyleSheet.create({
     padding: "5%",
     borderRadius: 20,
     marginVertical: "2.5%",
-    elevation: 5,
   },
   blackLine: {
     borderWidth: 0.5,

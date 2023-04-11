@@ -1,6 +1,6 @@
 import { View } from "react-native";
-import IconRender from "../../ui/IconRender";
-import { globalStyle } from "../../../styles/globalStyles";
+import IconRender from "./IconRender";
+import { globalStyle } from "../../../../styles/globalStyles";
 
 const MapTech = ({ stackTech }) => (
   <View style={globalStyle.rowWrapBetween}>

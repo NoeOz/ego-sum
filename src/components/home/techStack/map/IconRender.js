@@ -1,8 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import Animated, { FadeIn } from "react-native-reanimated";
-import { colorPalette, customizeText } from "../../styles/globalStyles";
-import { useEffect, useState } from "react";
-import { useAnimations } from "../../hooks/useAnimations";
+import { colorPalette, customizeText } from "../../../../styles/globalStyles";
 
 const IconRender = ({ nameIcon, type, delay }) => {
   return type === "image" ? (
