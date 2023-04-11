@@ -5,7 +5,7 @@ import {
 } from "react-native-reanimated";
 
 export function useAnimations() {
-  const SpringStyles = (number) =>
+  const TanslateYStyle = (number) =>
     useAnimatedStyle(() => {
       return {
         transform: [
@@ -19,5 +19,15 @@ export function useAnimations() {
       };
     });
 
-  return { SpringStyles };
+  const EnlargeAnimationStyle = (height) =>
+    useAnimatedStyle(() => {
+      return {
+        height: withSpring(height, {
+          damping: 100,
+          stiffness: 60,
+        }),
+      };
+    });
+
+  return { TanslateYStyle, EnlargeAnimationStyle };
 }

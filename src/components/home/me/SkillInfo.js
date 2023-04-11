@@ -1,6 +1,5 @@
 import { Text, View } from "react-native";
 import { customizeText, globalStyle } from "../../../styles/globalStyles";
-import { useState } from "react";
 import TextAuto from "../../ui/TextAuto";
 
 const skillsInitial = [
@@ -34,7 +33,10 @@ const SkillInfo = () => {
         textRender={
           "If there is something I don't know, I will learn it and apply it as soon as possible."
         }
-        customStyle={{...customizeText(18, "normal", null, "300"), marginVertical: 10}}
+        customStyle={{
+          ...customizeText(18, "normal", null, "300"),
+          marginVertical: 10,
+        }}
         speed={50}
       />
     </>

@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Card from "../../ui/Card";
 import { Feather } from "@expo/vector-icons";
 import {
@@ -9,16 +9,31 @@ import {
 } from "../../../styles/globalStyles";
 import Animated, { FadeIn } from "react-native-reanimated";
 import TextAuto from "../../ui/TextAuto";
+import { useState } from "react";
+import MapTech from "../techStack/map/MapTech";
 const Me = () => {
-  /* const { SpringStyles } = useAnimations();
-  const [yTransition, setYTransition] = useState(10); */
+  const [visibleInfo, setVisibleInfo] = useState(false);
 
-  /* useEffect(() => {
-    setTimeout(() => {
-      if (yTransition > 1) setYTransition(1);
-      else setYTransition(6);
-    }, 500);
-  }, [yTransition]); */
+  const contact = [
+    {
+      name: require("../../../assets/icons/linkedin.png"),
+      type: "image",
+      link: "https://www.linkedin.com/in/noe-oziel-perez-lopez-a52891255/",
+      size: 20
+    },
+    {
+      name: require("../../../assets/icons/github.png"),
+      type: "image",
+      link: "https://github.com/NoeOz",
+      size: 20
+    },
+    {
+      name: require("../../../assets/icons/instagram.png"),
+      type: "image",
+      link: "https://www.instagram.com/noe_oz/",
+      size: 20
+    },
+  ];
 
   const alterEgoMiddleAge =
     "https://cdn.discordapp.com/attachments/1091031773741326422/1093416474313490523/Noe_Oziel_crea_un_retrato_como_si_fuera_un_caballero_en_la_edad_c119c6ef-39b1-4867-80f9-e74ba67681e3.png";
@@ -28,26 +43,31 @@ const Me = () => {
   return (
     <Animated.View entering={FadeIn.duration(3500).springify()}>
       <Card
-        color={colorPalette.cactus_2}
+        color={colorPalette.gray_1}
         style={{
           ...globalStyle.rowBetweenCenter,
-          height: generalInfo.width * 0.5,
+          height: "auto",
+          maxHeight: generalInfo.width * 0.5,
           paddingHorizontal: "5%",
         }}
       >
-        <Image style={styles.imageStyle} source={{ uri: alterEgoMiddleAge }} />
+        <Image style={styles.imageStyle} source={{ uri: alterEgoWWI }} />
         <View style={styles.infoContainer}>
           <TextAuto
             textRender={"Noe Oziel"}
-            customStyle={customizeText(25, "normal")}
+            customStyle={customizeText(20, "normal")}
           />
           <View style={globalStyle.txtBorderSnow}>
-            <Text style={customizeText(20, "normal")}>Fullstack developer</Text>
+            <Text style={customizeText(18, "normal")}>Fullstack developer</Text>
           </View>
-          <View style={globalStyle.rowBetweenCenter}>
+          <TouchableOpacity
+            onPress={() => setVisibleInfo(!visibleInfo)}
+            style={globalStyle.rowBetweenCenter}
+          >
             <Text style={customizeText(18, "normal")}>More info here</Text>
             <Feather name="circle" size={15} color={colorPalette.snow} />
-          </View>
+          </TouchableOpacity>
+          {visibleInfo && <MapTech stackTech={contact} />}
         </View>
       </Card>
     </Animated.View>
@@ -56,8 +76,8 @@ const Me = () => {
 
 const styles = StyleSheet.create({
   imageStyle: {
-    height: generalInfo.width * 0.4,
-    width: generalInfo.width * 0.4,
+    height: generalInfo.width * 0.35,
+    width: generalInfo.width * 0.35,
     borderRadius: generalInfo.width * 0.25,
     marginRight: 10,
   },

@@ -10,6 +10,8 @@ const MapTech = ({ stackTech }) => (
         nameIcon={tech.name}
         type={tech.type}
         delay={index * 100 + 100}
+        link={tech?.link}
+        iconSize={tech?.size}
       />
     ))}
   </View>
