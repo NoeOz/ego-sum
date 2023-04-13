@@ -94,6 +94,11 @@ export const globalStyle = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-between",
   },
+  colWrapBetween: {
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  },
   txtBorderSnow: {
     borderWidth: 1,
     borderColor: colorPalette.snow,

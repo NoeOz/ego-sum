@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Card from "../../ui/Card";
-import { Feather } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 import {
   colorPalette,
   customizeText,
@@ -37,70 +37,62 @@ const Me = () => {
 
   return (
     <Animated.View entering={FadeIn.duration(500).delay(500)}>
-      <Card
-        color={colorPalette.snow}
-        style={{
-          height: generalInfo.height * 0.30,
-        }}
-      >
-        <View style={{ ...globalStyle.txtBorderSnow, marginVertical: 15 }}>
-          <Text style={customizeText(20, "dark")}>
-            Fullstack Dev | React Native Dev
-          </Text>
-        </View>
-        <TextAuto
-          textRender={"Noe Oziel Perez Lopez"}
-          customStyle={customizeText(20, "dark", "center", "400")}
-        />
-        <View style={{ marginTop: 15 }}>
-          <TouchableOpacity
-            style={globalStyle.rowBetweenCenter}
-            onPress={() => setVisibleInfo(!visibleInfo)}
-          >
-            <Text style={{ ...customizeText(18, "dark"), marginRight: 5 }}>
-              Info
-            </Text>
-            <Feather name="circle" size={15} color={colorPalette.snow} />
-          </TouchableOpacity>
-          {visibleInfo && (
-            <Card
-              color={colorPalette.lavander}
-              style={{ width: "50%", padding: "1%" }}
-            >
-              <MapTech stackTech={contact} />
-            </Card>
-          )}
-        </View>
-      </Card>
+      <View style={globalStyle.rowBetweenCenter}>
+        <Text style={customizeText(20, "normal", "left", "100")}>
+          PRO/FOLIO_
+        </Text>
+        <TouchableOpacity
+          style={globalStyle.txtBorderSnow}
+          onPress={() => setVisibleInfo(!visibleInfo)}
+        >
+          <Ionicons name="information" size={25} color={colorPalette.snow} />
+        </TouchableOpacity>
+      </View>
       <View
         style={{
-          ...styles.imageContainer,
-          backgroundColor: colorPalette.black_2,
+          ...globalStyle.rowBetweenCenter,
+          marginTop: "5%",
+          height: "28%",
         }}
       >
+        <View style={{ alignSelf: "flex-start" }}>
+          <TextAuto
+            textRender={"JS Dev Fullstack"}
+            customStyle={customizeText(38, "normal", "left", "900")}
+          />
+          <TextAuto
+            textRender={"React Native Dev"}
+            customStyle={customizeText(38, "normal", "left")}
+          />
+        </View>
+        {visibleInfo && <MapTech orientation={"y"} stackTech={contact} />}
+      </View>
+      <Card color={colorPalette.snow} style={styles.imageContainer}>
         <Image
           style={styles.imageStyle}
-          source={require("../../../assets/photos/ego.jpg")}
+          /* source={require("../../../assets/photos/ego.jpg")} */
         />
-      </View>
+        <View style={{ flexDirection: "column-reverse", flex: 1 }}>
+          <Text style={customizeText(20, "dark")}>🇫🇷 🇲🇽 🇺🇸</Text>
+          <Text style={customizeText(24, "dark", "left", "900")}>
+            #000 Noe Oziel
+          </Text>
+        </View>
+      </Card>
     </Animated.View>
   );
 };
 
 const styles = StyleSheet.create({
   imageContainer: {
-    height: generalInfo.width * 0.5,
-    width: generalInfo.width * 0.5,
-    borderRadius: generalInfo.width * 0.5,
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "center",
+    height: generalInfo.height * 0.35,
+    width: "100%",
   },
   imageStyle: {
-    height: generalInfo.width * 0.45,
-    width: generalInfo.width * 0.45,
-    borderRadius: generalInfo.width * 0.25,
-    backgroundColor: "red",
+    height: "65%",
+    width: "100%",
+    borderRadius: 15,
+    backgroundColor: colorPalette.cactus_2,
   },
 });
 

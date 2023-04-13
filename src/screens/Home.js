@@ -1,27 +1,19 @@
-import { StyleSheet, StatusBar, View, ScrollView } from "react-native";
-import {
-  colorPalette,
-  customizeText,
-  generalInfo,
-  globalStyle,
-} from "../styles/globalStyles";
+import { StyleSheet, StatusBar, View } from "react-native";
+import { colorPalette, generalInfo } from "../styles/globalStyles";
 import Me from "../components/home/me/Me";
-import SkillInfo from "../components/home/me/SkillInfo";
-import Professional from "../components/home/professional/Professional";
-import StackCollection from "../components/home/techStack/StackCollection";
 import BottomDragCard from "../components/modals/BottomDragCard";
+import AboutOptions from "../components/home/about/AboutOptions";
 
 export default function Home() {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={colorPalette.noir} />
       <Me />
       <BottomDragCard
-        height={generalInfo.height * 0.75}
+        height={generalInfo.height * 0.8}
         customStyle={styles.containerInfo}
       >
-        <StackCollection />
-        <SkillInfo />
-        <Professional />
+        <AboutOptions />
       </BottomDragCard>
     </View>
   );
@@ -30,8 +22,9 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colorPalette.snow,
-    marginTop: generalInfo.os === "android" ? StatusBar.currentHeight : 20,
+    backgroundColor: colorPalette.noir,
+    paddingTop: generalInfo.os === "android" ? 10 : 20,
+    padding: "2.5%",
   },
   containerInfo: {
     backgroundColor: colorPalette.black,

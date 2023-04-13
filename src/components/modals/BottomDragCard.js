@@ -6,7 +6,7 @@ import Animated, {
   withSpring,
   runOnJS,
 } from "react-native-reanimated";
-import { colorPalette } from "../../styles/globalStyles";
+import { colorPalette, generalInfo } from "../../styles/globalStyles";
 import { PanGestureHandler } from "react-native-gesture-handler";
 import { useEffect, useState } from "react";
 
@@ -20,7 +20,7 @@ const BottomDragCard = (props) => {
     setStyleModal({
       ...styles.modal,
       height: height,
-      bottom: height * -0.82,
+      bottom: height * -0.85,
     });
 
     return () => {};
@@ -28,7 +28,7 @@ const BottomDragCard = (props) => {
 
   function closeModal(dragged) {
     if (dragged >= height * 0.15) {
-      changeBottom(height * -0.82);
+      changeBottom(height * -0.85);
     }
   }
 
@@ -70,7 +70,7 @@ const BottomDragCard = (props) => {
   return (
     <PanGestureHandler onGestureEvent={onGestureEvent}>
       <Animated.View style={[styleModal, customStyle, animatedStyle]}>
-        <View style={{...styles.panGestureIndicator, top: height * -0.05}} />
+        <View style={{...styles.panGestureIndicator, top: height * -0.03}} />
         {children}
       </Animated.View>
     </PanGestureHandler>
@@ -81,7 +81,7 @@ export default BottomDragCard;
 
 const styles = StyleSheet.create({
   modal: {
-    width: "100%",
+    width: generalInfo.width,
     position: "absolute",
     bottom: 0,
     backgroundColor: colorPalette.snow,
@@ -90,12 +90,6 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     zIndex: 5,
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 2,
   },
   panGestureIndicator: {
     width: "30%",

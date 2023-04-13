@@ -2,6 +2,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 import {
   colorPalette,
   customizeText,
+  generalInfo,
   globalStyle,
 } from "../../../styles/globalStyles";
 import Card from "../../ui/Card";
@@ -25,8 +26,14 @@ const Professional = () => {
   }
 
   return (
-    <Animated.View entering={FadeIn.duration(500).delay(2000)}>
-      <Card color={colorPalette.cool_gray} style={globalStyle.rowBetweenCenter}>
+    <Animated.View entering={FadeIn.duration(500).delay(500)}>
+      <Card
+        color={colorPalette.cool_gray}
+        style={{
+          ...globalStyle.rowBetweenCenter,
+          height: generalInfo.height * 0.25,
+        }}
+      >
         <TouchableOpacity
           onPress={() => handleSelectTheme("work")}
           style={{ ...globalStyle.txtBorderSnow, alignSelf: "flex-start" }}
