@@ -77,6 +77,13 @@ export const globalStyle = StyleSheet.create({
     borderColor: colorPalette.snow,
     width: "100%",
   },
+  verticalSnowLine: {
+    height: "100%",
+    width: 1,
+    borderRadius: 10,
+    backgroundColor: colorPalette.snow,
+    marginHorizontal: 10,
+  },
   rowBetweenCenter: {
     flexDirection: "row",
     justifyContent: "space-between",

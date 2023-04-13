@@ -19,72 +19,88 @@ const Me = () => {
       name: require("../../../assets/icons/linkedin.png"),
       type: "image",
       link: "https://www.linkedin.com/in/noe-oziel-perez-lopez-a52891255/",
-      size: 20
+      size: 25,
     },
     {
       name: require("../../../assets/icons/github.png"),
       type: "image",
       link: "https://github.com/NoeOz",
-      size: 20
+      size: 25,
     },
     {
       name: require("../../../assets/icons/instagram.png"),
       type: "image",
       link: "https://www.instagram.com/noe_oz/",
-      size: 20
+      size: 25,
     },
   ];
 
-  const alterEgoMiddleAge =
-    "https://cdn.discordapp.com/attachments/1091031773741326422/1093416474313490523/Noe_Oziel_crea_un_retrato_como_si_fuera_un_caballero_en_la_edad_c119c6ef-39b1-4867-80f9-e74ba67681e3.png";
-  const alterEgoWWI =
-    "https://cdn.discordapp.com/attachments/1091031773741326422/1092576289535311982/Noe_Oziel_Crear_un_retrato_estilo_de_soldado_de_la_Primera_Guer_6c169e29-e9e9-4537-a8e9-9405d2a4e61e.png";
-
   return (
-    <Animated.View entering={FadeIn.duration(3500).springify()}>
+    <Animated.View entering={FadeIn.duration(500).delay(500)}>
       <Card
-        color={colorPalette.gray_1}
+        color={colorPalette.snow}
         style={{
-          ...globalStyle.rowBetweenCenter,
-          height: "auto",
-          maxHeight: generalInfo.width * 0.5,
-          paddingHorizontal: "5%",
+          height: generalInfo.height * 0.30,
         }}
       >
-        <Image style={styles.imageStyle} source={{ uri: alterEgoWWI }} />
-        <View style={styles.infoContainer}>
-          <TextAuto
-            textRender={"Noe Oziel"}
-            customStyle={customizeText(20, "normal")}
-          />
-          <View style={globalStyle.txtBorderSnow}>
-            <Text style={customizeText(18, "normal")}>Fullstack developer</Text>
-          </View>
+        <View style={{ ...globalStyle.txtBorderSnow, marginVertical: 15 }}>
+          <Text style={customizeText(20, "dark")}>
+            Fullstack Dev | React Native Dev
+          </Text>
+        </View>
+        <TextAuto
+          textRender={"Noe Oziel Perez Lopez"}
+          customStyle={customizeText(20, "dark", "center", "400")}
+        />
+        <View style={{ marginTop: 15 }}>
           <TouchableOpacity
-            onPress={() => setVisibleInfo(!visibleInfo)}
             style={globalStyle.rowBetweenCenter}
+            onPress={() => setVisibleInfo(!visibleInfo)}
           >
-            <Text style={customizeText(18, "normal")}>More info here</Text>
+            <Text style={{ ...customizeText(18, "dark"), marginRight: 5 }}>
+              Info
+            </Text>
             <Feather name="circle" size={15} color={colorPalette.snow} />
           </TouchableOpacity>
-          {visibleInfo && <MapTech stackTech={contact} />}
+          {visibleInfo && (
+            <Card
+              color={colorPalette.lavander}
+              style={{ width: "50%", padding: "1%" }}
+            >
+              <MapTech stackTech={contact} />
+            </Card>
+          )}
         </View>
       </Card>
+      <View
+        style={{
+          ...styles.imageContainer,
+          backgroundColor: colorPalette.black_2,
+        }}
+      >
+        <Image
+          style={styles.imageStyle}
+          source={require("../../../assets/photos/ego.jpg")}
+        />
+      </View>
     </Animated.View>
   );
 };
 
 const styles = StyleSheet.create({
-  imageStyle: {
-    height: generalInfo.width * 0.35,
-    width: generalInfo.width * 0.35,
-    borderRadius: generalInfo.width * 0.25,
-    marginRight: 10,
+  imageContainer: {
+    height: generalInfo.width * 0.5,
+    width: generalInfo.width * 0.5,
+    borderRadius: generalInfo.width * 0.5,
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "center",
   },
-  infoContainer: {
-    justifyContent: "space-evenly",
-    flex: 1,
-    height: "100%",
+  imageStyle: {
+    height: generalInfo.width * 0.45,
+    width: generalInfo.width * 0.45,
+    borderRadius: generalInfo.width * 0.25,
+    backgroundColor: "red",
   },
 });
 
