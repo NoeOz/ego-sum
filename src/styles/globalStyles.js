@@ -7,7 +7,7 @@ export const colorPalette = {
   cactus_2: "#839292",
   mustad: "#675a1e",
   honey: "#DFB921",
-  honey_2: "#E9E550",
+  honey_2: "#DFB92199",
   coffe: "#504945",
   grape: "#443C6899",
   lavander: "#A292B0",

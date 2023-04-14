@@ -12,9 +12,17 @@ import {
 } from "../../modals/TraslucentModal";
 import { useState } from "react";
 
-import WorkXP from "./themes/WorkXP";
-import Carieer from "./themes/Carieer";
 import Animated, { FadeIn } from "react-native-reanimated";
+import { carieerSteps, workSteps } from "../../../constants🐤/proConst";
+import TimeLineRender from "./TimeLine";
+
+export const Carieer = () => {
+  return <TimeLineRender contentRender={carieerSteps} />;
+};
+
+export const WorkXP = () => {
+  return <TimeLineRender contentRender={workSteps} />;
+};
 
 const Professional = () => {
   const controlModal = StateTraslucentModal();
@@ -28,24 +36,34 @@ const Professional = () => {
   return (
     <Animated.View entering={FadeIn.duration(500).delay(500)}>
       <Card
-        color={colorPalette.cool_gray}
+        color={colorPalette.cactus_2}
         style={{
-          ...globalStyle.rowBetweenCenter,
           height: generalInfo.height * 0.25,
+          borderTopLeftRadius: 0,
         }}
       >
-        <TouchableOpacity
-          onPress={() => handleSelectTheme("work")}
-          style={{ ...globalStyle.txtBorderSnow, alignSelf: "flex-start" }}
-        >
-          <Text style={customizeText(20, "normal")}>Work experience</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => handleSelectTheme("carieer")}
-          style={{ ...globalStyle.txtBorderSnow, alignSelf: "flex-start" }}
-        >
-          <Text style={customizeText(20, "normal")}>Carieer</Text>
-        </TouchableOpacity>
+        <Card color={"rgba(0,0,0,.2)"} style={{ flex: 1 }}>
+          <Text style={customizeText(22, "dark")}>
+            This is a space to show my experience and my steps in the
+            professional world with a timeline
+          </Text>
+        </Card>
+        <View style={globalStyle.rowBetweenCenter}>
+          <TouchableOpacity
+            onPress={() => handleSelectTheme("work")}
+            style={{ ...globalStyle.txtBorderNoir, alignSelf: "flex-start" }}
+          >
+            <Text style={customizeText(20, "dark", "left", "500")}>
+              Work experience
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => handleSelectTheme("carieer")}
+            style={{ ...globalStyle.txtBorderNoir, alignSelf: "flex-start" }}
+          >
+            <Text style={customizeText(20, "dark", "left", "500")}>Career</Text>
+          </TouchableOpacity>
+        </View>
       </Card>
       <TraslucentModal {...controlModal}>
         {selectedTheme === "work" ? <WorkXP /> : <Carieer />}

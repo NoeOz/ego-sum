@@ -1,4 +1,11 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  Linking,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import Card from "../../ui/Card";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import {
@@ -11,29 +18,13 @@ import Animated, { FadeIn } from "react-native-reanimated";
 import TextAuto from "../../ui/TextAuto";
 import { useState } from "react";
 import MapTech from "../techStack/map/MapTech";
+import { contact } from "../../../constants🐤/contact";
 const Me = () => {
   const [visibleInfo, setVisibleInfo] = useState(false);
 
-  const contact = [
-    {
-      name: require("../../../assets/icons/linkedin.png"),
-      type: "image",
-      link: "https://www.linkedin.com/in/noe-oziel-perez-lopez-a52891255/",
-      size: 25,
-    },
-    {
-      name: require("../../../assets/icons/github.png"),
-      type: "image",
-      link: "https://github.com/NoeOz",
-      size: 25,
-    },
-    {
-      name: require("../../../assets/icons/instagram.png"),
-      type: "image",
-      link: "https://www.instagram.com/noe_oz/",
-      size: 25,
-    },
-  ];
+  function handleOpenLink(link) {
+    if (!!link) Linking.openURL(link);
+  }
 
   return (
     <Animated.View entering={FadeIn.duration(500).delay(500)}>
@@ -48,7 +39,8 @@ const Me = () => {
           <Ionicons name="information" size={25} color={colorPalette.snow} />
         </TouchableOpacity>
       </View>
-      <View
+      <Animated.View
+        entering={FadeIn.duration(500).delay(1000)}
         style={{
           ...globalStyle.rowBetweenCenter,
           marginTop: "5%",
@@ -65,8 +57,14 @@ const Me = () => {
             customStyle={customizeText(38, "normal", "left")}
           />
         </View>
-        {visibleInfo && <MapTech orientation={"y"} stackTech={contact} />}
-      </View>
+        {visibleInfo && (
+          <MapTech
+            orientation={"y"}
+            stackTech={contact}
+            onPressedItem={handleOpenLink}
+          />
+        )}
+      </Animated.View>
       <Card color={colorPalette.snow} style={styles.imageContainer}>
         <Image
           style={styles.imageStyle}

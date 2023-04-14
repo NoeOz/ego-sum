@@ -1,19 +1,21 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Animated, { FadeIn } from "react-native-reanimated";
 import { colorPalette, customizeText } from "../../../../styles/globalStyles";
-import * as Linking from "expo-linking";
 
-const IconRender = ({ nameIcon, type, delay, link = null, iconSize = 30 }) => {
-  function handleOpenLink() {
-    if (!!link) Linking.openURL(link);
-  }
-
+const IconRender = ({
+  nameIcon,
+  type,
+  delay,
+  link = null,
+  onPressedItem,
+  iconSize = 30,
+}) => {
   return type === "image" ? (
     <Animated.View
       entering={FadeIn.delay(delay).springify()}
-      style={{...styles.iconContainer, height: iconSize + 20}}
+      style={{ ...styles.iconContainer, height: iconSize + 20 }}
     >
-      <TouchableOpacity onPress={() => handleOpenLink()}>
+      <TouchableOpacity onPress={() => onPressedItem(link)}>
         <Image
           style={{ height: iconSize, width: iconSize }}
           source={nameIcon}
@@ -25,7 +27,7 @@ const IconRender = ({ nameIcon, type, delay, link = null, iconSize = 30 }) => {
       entering={FadeIn.delay(delay).springify()}
       style={styles.iconContainer}
     >
-      <TouchableOpacity onPress={() => handleOpenLink()}>
+      <TouchableOpacity onPress={() => onPressedItem(link)}>
         <Text style={customizeText(18, "dark", "center", "bold")}>
           {nameIcon}
         </Text>

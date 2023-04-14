@@ -1,13 +1,14 @@
 import { Text, View } from "react-native";
-import { useAnimations } from "../../../../hooks/useAnimations";
+import { useAnimations } from "../../../hooks/useAnimations";
 import {
   colorPalette,
   customizeText,
   generalInfo,
-} from "../../../../styles/globalStyles";
+} from "../../../styles/globalStyles";
 import { useEffect, useState } from "react";
 import Animated, { FadeIn } from "react-native-reanimated";
-import Card from "../../../ui/Card";
+import Card from "../../ui/Card";
+import MapTech from "../techStack/map/MapTech";
 
 const LineProgress = () => {
   const { EnlargeAnimationStyle } = useAnimations();
@@ -18,7 +19,7 @@ const LineProgress = () => {
     if (currentHeight < totalHeight) {
       setTimeout(() => {
         setCurrentHeight((h) => h + totalHeight * 0.08);
-      }, 200);
+      }, 150);
     }
   }, [currentHeight]);
 
@@ -40,7 +41,7 @@ const LineProgress = () => {
   );
 };
 
-const AnimatedContent = ({ contentRender }) => {
+const TimeLineRender = ({ contentRender }) => {
   const content = contentRender;
 
   return (
@@ -76,6 +77,9 @@ const AnimatedContent = ({ contentRender }) => {
                 {step.name}
               </Text>
             </Card>
+            <View style={{ alignSelf: "flex-start" }}>
+              <MapTech stackTech={step.tech} />
+            </View>
           </Animated.View>
         ))}
       </View>
@@ -83,4 +87,4 @@ const AnimatedContent = ({ contentRender }) => {
   );
 };
 
-export default AnimatedContent;
+export default TimeLineRender;
