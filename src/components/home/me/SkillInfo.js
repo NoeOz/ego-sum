@@ -4,7 +4,7 @@ import Card from "../../ui/Card";
 import MapTech from "../techStack/map/MapTech";
 import Animated, { FadeIn } from "react-native-reanimated";
 import { Text } from "react-native";
-import { skillsInitial } from "../../../constants🐤/skillsInitial";
+import { skillsInitial } from "../../../constants/skillsInitial";
 
 const SkillInfo = () => {
   const [reasonSelected, setReasonSelected] = useState("");

@@ -18,7 +18,7 @@ import Animated, { FadeIn } from "react-native-reanimated";
 import TextAuto from "../../ui/TextAuto";
 import { useState } from "react";
 import MapTech from "../techStack/map/MapTech";
-import { contact } from "../../../constants🐤/contact";
+import { contact } from "../../../constants/contact";
 const Me = () => {
   const [visibleInfo, setVisibleInfo] = useState(false);
 

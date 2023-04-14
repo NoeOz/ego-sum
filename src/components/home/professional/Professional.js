@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 
 import Animated, { FadeIn } from "react-native-reanimated";
-import { carieerSteps, workSteps } from "../../../constants🐤/proConst";
+import { carieerSteps, workSteps } from "../../../constants/proConst";
 import TimeLineRender from "./TimeLine";
 
 export const Carieer = () => {

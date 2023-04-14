@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import Animated, { FadeIn } from "react-native-reanimated";
 import MapTech from "./map/MapTech";
 import { customizeText } from "../../../styles/globalStyles";
-import { mobileTech } from "../../../constants🐤/stack";
+import { mobileTech } from "../../../constants/stack";
 
 const MobileStack = () => {
 
