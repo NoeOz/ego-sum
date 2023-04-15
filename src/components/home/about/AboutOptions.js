@@ -16,7 +16,7 @@ const AboutOptions = () => {
   const [optionSelected, setOptionSelected] = useState(false);
 
   return (
-    <Animated.View entering={FadeIn.duration(500).delay(750)}>
+    <Animated.View entering={FadeIn.duration(500).delay(400)}>
       <View style={globalStyle.rowBetweenCenter}>
         {options.map((option) => (
           <Card
@@ -44,6 +44,13 @@ const AboutOptions = () => {
       {optionSelected === "tech" && <StackCollection />}
       {optionSelected === "skills" && <SkillInfo />}
       {optionSelected === "xp" && <Professional />}
+      {!optionSelected && (
+        <Card color={colorPalette.gray_1}>
+          <Text style={customizeText(18, "normal", "center")}>
+            Select an option
+          </Text>
+        </Card>
+      )}
     </Animated.View>
   );
 };

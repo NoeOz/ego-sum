@@ -20,7 +20,7 @@ const BottomDragCard = (props) => {
     setStyleModal({
       ...styles.modal,
       height: height,
-      bottom: height * -0.85,
+      bottom: height * -0.84,
     });
 
     return () => {};
@@ -28,7 +28,7 @@ const BottomDragCard = (props) => {
 
   function closeModal(dragged) {
     if (dragged >= height * 0.15) {
-      changeBottom(height * -0.85);
+      changeBottom(height * -0.84);
     }
   }
 
@@ -70,7 +70,7 @@ const BottomDragCard = (props) => {
   return (
     <PanGestureHandler onGestureEvent={onGestureEvent}>
       <Animated.View style={[styleModal, customStyle, animatedStyle]}>
-        <View style={{...styles.panGestureIndicator, top: height * -0.03}} />
+        <View style={styles.panGestureIndicator} />
         {children}
       </Animated.View>
     </PanGestureHandler>
@@ -94,10 +94,9 @@ const styles = StyleSheet.create({
   panGestureIndicator: {
     width: "30%",
     height: 6,
-    position: "absolute",
     borderRadius: 12,
     backgroundColor: colorPalette.cool_gray,
     alignSelf: "center",
-    marginVertical: 10,
+    marginVertical: 5,
   },
 });
