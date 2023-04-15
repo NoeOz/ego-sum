@@ -15,7 +15,8 @@
     "react-native": "0.71.6",
     "react-native-reanimated": "~2.14.4",
     "react-native-gesture-handler": "~2.9.0",
-    "expo-linking": "~4.0.1"
+    "expo-linking": "~4.0.1",
+    "expo-constants": "~14.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

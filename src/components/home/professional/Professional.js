@@ -13,15 +13,15 @@ import {
 import { useState } from "react";
 
 import Animated, { FadeIn } from "react-native-reanimated";
-import { carieerSteps, workSteps } from "../../../constants🐤/proConst";
-import TimeLineRender from "./TimeLine";
+import { carieerSteps, workSteps } from "../../../constants/proConst";
+import TimeLineAnim from "./TimeLineAnim";
 
 export const Carieer = () => {
-  return <TimeLineRender contentRender={carieerSteps} />;
+  return <TimeLineAnim contentRender={carieerSteps} />;
 };
 
 export const WorkXP = () => {
-  return <TimeLineRender contentRender={workSteps} />;
+  return <TimeLineAnim contentRender={workSteps} />;
 };
 
 const Professional = () => {
@@ -67,6 +67,16 @@ const Professional = () => {
       </Card>
       <TraslucentModal {...controlModal}>
         {selectedTheme === "work" ? <WorkXP /> : <Carieer />}
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            bottom: "3%",
+            right: "8%",
+          }}
+          onPress={() => controlModal.setVisible(false)}
+        >
+          <Text style={customizeText(20, "normal", "center", "700")}>exit</Text>
+        </TouchableOpacity>
       </TraslucentModal>
     </Animated.View>
   );

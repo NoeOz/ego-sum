@@ -10,7 +10,7 @@ import SkillInfo from "../me/SkillInfo";
 import Professional from "../professional/Professional";
 import { useState } from "react";
 import Animated, { FadeIn } from "react-native-reanimated";
-import { options } from "../../../constants🐤/options";
+import { options } from "../../../constants/options";
 
 const AboutOptions = () => {
   const [optionSelected, setOptionSelected] = useState(false);

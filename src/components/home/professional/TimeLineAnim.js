@@ -41,7 +41,7 @@ const LineProgress = () => {
   );
 };
 
-const TimeLineRender = ({ contentRender }) => {
+const TimeLineAnim = ({ contentRender }) => {
   const content = contentRender;
 
   return (
@@ -87,4 +87,4 @@ const TimeLineRender = ({ contentRender }) => {
   );
 };
 
-export default TimeLineRender;
+export default TimeLineAnim;

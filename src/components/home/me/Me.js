@@ -18,7 +18,7 @@ import Animated, { FadeIn } from "react-native-reanimated";
 import TextAuto from "../../ui/TextAuto";
 import { useState } from "react";
 import MapTech from "../techStack/map/MapTech";
-import { contact } from "../../../constants🐤/contact";
+import { contact } from "../../../constants/contact";
 const Me = () => {
   const [visibleInfo, setVisibleInfo] = useState(false);
 
@@ -33,7 +33,7 @@ const Me = () => {
           PRO/FOLIO_
         </Text>
         <TouchableOpacity
-          style={globalStyle.txtBorderSnow}
+          style={{ ...globalStyle.txtBorderSnow, padding: "1.5%" }}
           onPress={() => setVisibleInfo(!visibleInfo)}
         >
           <Ionicons name="information" size={25} color={colorPalette.snow} />
@@ -42,12 +42,11 @@ const Me = () => {
       <Animated.View
         entering={FadeIn.duration(500).delay(1000)}
         style={{
-          ...globalStyle.rowBetweenCenter,
           marginTop: "5%",
-          height: "28%",
+          height: "30%",
         }}
       >
-        <View style={{ alignSelf: "flex-start" }}>
+        <View style={{ marginBottom: 10 }}>
           <TextAuto
             textRender={"JS Dev Fullstack"}
             customStyle={customizeText(38, "normal", "left", "900")}
@@ -57,13 +56,11 @@ const Me = () => {
             customStyle={customizeText(38, "normal", "left")}
           />
         </View>
-        {visibleInfo && (
-          <MapTech
-            orientation={"y"}
-            stackTech={contact}
-            onPressedItem={handleOpenLink}
-          />
-        )}
+        <View style={{ width: generalInfo.width * 0.4 }}>
+          {visibleInfo && (
+            <MapTech stackTech={contact} onPressedItem={handleOpenLink} />
+          )}
+        </View>
       </Animated.View>
       <Card color={colorPalette.snow} style={styles.imageContainer}>
         <Image

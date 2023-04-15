@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import MapTech from "./map/MapTech";
 import Animated, { FadeIn } from "react-native-reanimated";
 import { customizeText } from "../../../styles/globalStyles";
-import { cloudTech } from "../../../constants🐤/stack";
+import { cloudTech } from "../../../constants/stack";
 
 const CloudStack = () => {
 
