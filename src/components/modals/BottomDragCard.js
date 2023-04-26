@@ -11,7 +11,7 @@ import { PanGestureHandler } from "react-native-gesture-handler";
 import { useEffect, useState } from "react";
 
 const BottomDragCard = (props) => {
-  const { children, customStyle, height } = props;
+  const { children, customStyle, listener, height } = props;
   const [styleModal, setStyleModal] = useState(new Object());
 
   const translateY = useSharedValue(0);
@@ -25,6 +25,16 @@ const BottomDragCard = (props) => {
 
     return () => {};
   }, []);
+
+  useEffect(() => {
+    openModalListener();
+
+    return () => {};
+  }, [listener]);
+
+  function openModalListener() {
+    if (listener && !!styleModal.bottom > 0) changeBottom(0);
+  }
 
   function closeModal(dragged) {
     if (dragged >= height * 0.15) {

@@ -1,7 +1,6 @@
 import { StyleSheet, StatusBar, View, Dimensions } from "react-native";
 import { colorPalette, generalInfo } from "../styles/globalStyles";
 import Me from "../components/home/me/Me";
-import BottomDragCard from "../components/modals/BottomDragCard";
 import AboutOptions from "../components/home/about/AboutOptions";
 
 export default function Home() {
@@ -14,12 +13,7 @@ export default function Home() {
         barStyle={generalInfo.os == "ios" ? "dark-content" : "default"}
       />
       <Me />
-      <BottomDragCard
-        height={generalInfo.height * 0.8}
-        customStyle={styles.containerInfo}
-      >
-        <AboutOptions />
-      </BottomDragCard>
+      <AboutOptions />
     </View>
   );
 }
@@ -33,8 +27,5 @@ const styles = StyleSheet.create({
         ? StatusBar.currentHeight
         : Dimensions.get("screen").height * 0.05,
     padding: "2.5%",
-  },
-  containerInfo: {
-    backgroundColor: colorPalette.black,
   },
 });
