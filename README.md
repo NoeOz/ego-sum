@@ -8,7 +8,7 @@ If you have a question or any comment you can contact me by mail ploz2767@gmail.
 Tanks!
 
 <div>
-  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_1.jpg" width="290" height="520"/>
-  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_2.jpg" width="290" height="520"/>
-  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_3.jpg" width="290" height="520"/>
+  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_1.jpg" width="280" height="520"/>
+  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_2.jpg" width="280" height="520"/>
+  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_3.jpg" width="280" height="520"/>
 </div>
