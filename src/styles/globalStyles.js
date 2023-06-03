@@ -14,6 +14,8 @@ export const colorPalette = {
   gray_1: "#555555",
   gray_2: "#909090",
   cool_gray: "#4B576E",
+  cool_gray_2: "#788192",
+  cool_gray_3: "#BCC0C9",
 
   error: "#C54444",
   background: "#121212",

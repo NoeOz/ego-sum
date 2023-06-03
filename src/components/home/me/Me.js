@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import Card from "../../ui/Card";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import {
   colorPalette,
   customizeText,
@@ -43,17 +43,17 @@ const Me = () => {
         entering={FadeIn.duration(500).delay(1000)}
         style={{
           marginTop: "5%",
-          height: "30%",
+          height: "23%",
         }}
       >
         <View style={{ marginBottom: 10 }}>
           <TextAuto
             textRender={"JS Dev Fullstack"}
-            customStyle={customizeText(38, "normal", "left", "900")}
+            customStyle={customizeText(34, "normal", "left", "900")}
           />
           <TextAuto
             textRender={"React Native Dev"}
-            customStyle={customizeText(38, "normal", "left")}
+            customStyle={customizeText(32, "normal", "left")}
           />
         </View>
         <View style={{ width: generalInfo.width * 0.4 }}>
@@ -65,12 +65,12 @@ const Me = () => {
       <Card color={colorPalette.snow} style={styles.imageContainer}>
         <Image
           style={styles.imageStyle}
-          /* source={require("../../../assets/photos/ego.jpg")} */
+          source={require("../../../assets/photos/ego.jpg")}
         />
-        <View style={{ flexDirection: "column-reverse", flex: 1 }}>
-          <Text style={customizeText(20, "dark")}>🇫🇷 🇲🇽 🇺🇸</Text>
+        <View style={{ flex: 1, paddingVertical: "3%" }}>
+          <Text style={customizeText(20, "dark")}>Comms in 🇫🇷 🇲🇽 🇺🇸</Text>
           <Text style={customizeText(24, "dark", "left", "900")}>
-            #000 Noe Oziel
+            #0399 Noe Oziel
           </Text>
         </View>
       </Card>
@@ -80,11 +80,11 @@ const Me = () => {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    height: generalInfo.height * 0.35,
+    height: generalInfo.height * 0.5,
     width: "100%",
   },
   imageStyle: {
-    height: "65%",
+    height: "80%",
     width: "100%",
     borderRadius: 15,
     backgroundColor: colorPalette.cactus_2,
