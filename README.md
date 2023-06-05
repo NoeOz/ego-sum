@@ -7,4 +7,8 @@ If you have a question or any comment you can contact me by mail ploz2767@gmail.
 
 Tanks!
 
-![prev 1](https://drive.google.com/file/d/1evF0r2TDzxRYntxc6q7Qb7WLXAxU3uaX/view?usp=sharing) [prev 2](https://drive.google.com/file/d/1qKl6fJM7DostRc_IKibXxNBYUpwwT1oX/view?usp=sharing) [pev 3](https://drive.google.com/file/d/16yrcCUxTTuI4i4X4xlEvV0pDK2__SboG/view?usp=sharing)
+<div>
+  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_1.jpg" width="280" height="520"/>
+  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_2.jpg" width="280" height="520"/>
+  <img src="https://github.com/NoeOz/ego-sum/blob/master/src/assets/previewApp/profolio_3.jpg" width="280" height="520"/>
+</div>
