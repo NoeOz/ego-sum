@@ -49,11 +49,11 @@ const Me = () => {
         <View style={{ marginBottom: 10 }}>
           <TextAuto
             textRender={"Fullstack Dev"}
-            customStyle={customizeText(34, "normal", "left", "900")}
+            customStyle={customizeText(34, "normal", null, "900")}
           />
           <TextAuto
-            textRender={"React Native Dev"}
-            customStyle={customizeText(32, "normal", "left")}
+            textRender={"Noe Oziel"}
+            customStyle={customizeText(32, "normal")}
           />
         </View>
         <View style={{ width: generalInfo.width * 0.4 }}>
@@ -67,10 +67,12 @@ const Me = () => {
           style={styles.imageStyle}
           source={require("../../../assets/photos/ego.jpg")}
         />
-        <View style={{ flex: 1, paddingVertical: "3%" }}>
-          <Text style={customizeText(20, "dark")}>Comms in 🇫🇷 🇲🇽 🇺🇸</Text>
-          <Text style={customizeText(24, "dark", "left", "900")}>
-            #0399 Noe Oziel
+        <View style={{ flex: 1, marginVertical: "6%" }}>
+          <Text style={customizeText(18, "dark", null, "800")}>
+            Comms ESP . FR . ENG
+          </Text>
+          <Text style={customizeText(18, "dark", "right", "200")}>
+            Made in MX
           </Text>
         </View>
       </Card>
@@ -82,12 +84,14 @@ const styles = StyleSheet.create({
   imageContainer: {
     height: generalInfo.height * 0.5,
     width: "100%",
+    paddingVertical: "2%",
   },
   imageStyle: {
     height: "80%",
     width: "100%",
-    borderRadius: 15,
+    marginTop: "2.5%",
     backgroundColor: colorPalette.cactus_2,
+    borderRadius: 20,
   },
 });
 
