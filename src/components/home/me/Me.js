@@ -48,7 +48,7 @@ const Me = () => {
       >
         <View style={{ marginBottom: 10 }}>
           <TextAuto
-            textRender={"JS Fullstack Dev"}
+            textRender={"Fullstack Dev"}
             customStyle={customizeText(34, "normal", "left", "900")}
           />
           <TextAuto
